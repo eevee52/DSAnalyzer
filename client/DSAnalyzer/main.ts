@@ -1,4 +1,14 @@
-import functionToRun from './functionToRun';
-import visualize from './visualize';
+// import functionToRun from './functionToRun';
+let functionToRun;
 
-export { functionToRun, visualize };
+export default {
+  functionToRun,
+  importFunc: (func: any) => {
+    functionToRun = func;
+    console.log(functionToRun);
+  },
+
+  importArgs: (args: any) => {
+    console.log(args);
+  }
+};

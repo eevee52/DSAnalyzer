@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Initializer } from './Initializer';
+
 // nav bar
 
 // button to select algorithm to visualize
@@ -11,6 +13,7 @@ import * as React from 'react';
 const HomePage = () => {
   return (
     <div id='container'>
+      <Initializer />
       <div> Button</div>
       <div> Render me</div>
 
