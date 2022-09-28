@@ -1,3 +1,4 @@
+console.log('running ll.js')
 // maybe import types here too
 /* 
     import { LinkedList } from "DSAnalyzer";
@@ -20,7 +21,6 @@ function Node(val) {
 
 
 const llAdd = (LL, node) => {
-  console.log('args', LL, node);
   let currNode = LL.head;
   if (!currNode) {
     LL.head = node;
@@ -51,4 +51,4 @@ DSAnalyzer.importFunc(llAdd);
 // visualize method reassigns some variable to the current object..
 // push that object into an array to form JSX elements (divs)
 
-DSAnalyzer.importArgs([linkedList, nodetoAdd]);
+DSAnalyzer.importArgs({linkedList, nodetoAdd});

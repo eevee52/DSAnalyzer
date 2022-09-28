@@ -1,36 +1,27 @@
-// import functionToRun from './functionToRun';
-let functionToRun: any, argsToRun: any;
+type UserFunctions = {
+  [name: string]: any,
+}
 
-// export const testing = {
-//   functionToRun,
-//   importFunc: (func: any) => {
-//     functionToRun = func;
-//     console.log(functionToRun);
-//   },
-//   argsToRun,
-//   importArgs: (args: any) => {
-//     argsToRun = args;
-//     console.log(argsToRun);
-//   }
-// };
+type UserArgs = {
+  [name: string]: any,
+}
 
-
+const functionsToRun: UserFunctions = { }
+const argsToRun: UserArgs = { }
 
 export const importFunc = (func: any) => {
-  functionToRun = func;
-  console.log(functionToRun);
+  functionsToRun[func.name] = func;
+  // console.log(functionsToRun);
 };
 
 export const importArgs = (args: any) => {
-  argsToRun = args;
-  console.log(argsToRun);
+  // console.log(typeof args.linkedList)
+  for (const i in args){
+    argsToRun[i] = args[i]
+  }
+  // console.log(argsToRun);
 
 };
 
-// export default functionToRun;
-export { argsToRun, functionToRun };
+export { argsToRun, functionsToRun }
 
-// export default argsInFunc;
-// functionToRun?: (func: any) => {
-     
-// }
