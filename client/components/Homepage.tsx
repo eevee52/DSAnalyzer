@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Visualizer from './Visualizer';
-import { outputArr, reset } from '../DSAnalyzer/visualize';
+import { output, reset, tester } from '../DSAnalyzer/visualize';
 import { functionToRun, argsToRun } from '../DSAnalyzer/main';
 // import functionToRun from '../DSAnalyzer/main';
 // import argsToRun from '../DSAnalyzer/main';
@@ -18,7 +18,7 @@ import { Initializer } from './Initializer';
 // declare const DSAnalyzer: any; 
 const HomePage = () => {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   //logic to display file names in dropdown
 
   //onclick (visualize button) to execute code inside dropdown
@@ -26,13 +26,15 @@ const HomePage = () => {
   const resetData = () => {
     reset();
     location.reload();
-    setData([]);
+    setData({});
   };
 
   const createBoxes = () => {
     // invoke the correct algorithm with arguments
-    functionToRun(...argsToRun);
-    setData(outputArr);
+    // functionToRun(...argsToRun);
+    tester();
+
+    setData(output);
   };
 
   return (
