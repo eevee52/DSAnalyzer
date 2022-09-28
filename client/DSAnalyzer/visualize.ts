@@ -29,11 +29,11 @@ const visualize = (LL: any) => {
     // so we ensure one null gets pushed into outputArr
     if (!currNode) firstNull = false;
     // set currNode equal to next node
-    
-    currNode = currNode.next;
+
+    else currNode = currNode.next;
     // else if (currNode) currNode = currNode.next;
     // else break;
-    counter +=1;
+    counter += 1;
     if (counter > 200) break;
   }
   outputArr.push(list);

@@ -18,12 +18,13 @@ let functionToRun: any, argsToRun: any;
 
 export const importFunc = (func: any) => {
   functionToRun = func;
-  console.log(functionToRun);
+  console.log(func.name);
+  console.log('THIS IS FUNC', functionToRun);
 };
 
 export const importArgs = (args: any) => {
   argsToRun = args;
-  console.log(argsToRun);
+  console.log('THESE ARE THE ARGS', argsToRun);
 
 };
 
