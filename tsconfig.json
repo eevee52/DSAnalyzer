@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "esModuleInterop": true,
     "noImplicitAny": true,
+    "typeRoots": ["./typings", "./vendor/types"]
   },
   "exclude": ["node_modules"]
 }

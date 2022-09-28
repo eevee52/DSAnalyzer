@@ -1,15 +1,11 @@
-import DSAnalyzer from "DSAnalyzer"
-import { output } from "../webpack.config";
 // maybe import types here too
 /* 
-  import { LinkedList } from "DSAnalyzer";
-  type LinkedList = {
-  // this.head: null | node;
-  // this.val = null;
-}
-*/
-
-//  function
+    import { LinkedList } from "DSAnalyzer";
+    type LinkedList = {
+    // this.head: null | node;
+    // this.val = null;
+  }
+  */
 
 function LinkedList() { 
   this.head = null;
@@ -23,22 +19,28 @@ function Node(val) {
 
 
 
-const llAdd = (LL, node) => {
+const llAdd = (LL, ...node) => {
+  console.log('args', LL, node);
   let currNode = LL.head;
   if (!currNode) {
     LL.head = node;
     LL.tail = node;
+    return;
   }
-  // LL = {1,2,3,4,5}
-  while (currNode) {
-    DSAnalyzer.visualize(LL); // => [1,2,3,4,5] => [1,2,3,4,5,6]
-    if (currNode.next) {
-      currNode = currNode.next;
+  let index = 0;
+  DSAnalyzer.visualize(LL); // 1
+
+  while (index < node.length) { // 1, 5, 6 --- 100
+    if (!currNode.next) {
+      if (node[index]) {
+        currNode.next = node[index];
+        index += 1;
+        LL.tail = node;
+      }
     }
-    else {
-      currNode.next = node;
-      LL.tail = node;
-    }
+
+    currNode = currNode.next;
+    DSAnalyzer.visualize(LL); // => 1, 5 - 1, 5, 6 - 1, 5, 6, 100, null
   }
 };
 
@@ -46,11 +48,11 @@ const llAdd = (LL, node) => {
 const linkedList = new LinkedList();
 linkedList.head = new Node(1);
 const nodetoAdd = new Node(5);
-  
-DSAnalyzer.functionToRun(llAdd); 
+const notetoAdd = new Node(6);
+const dada = new Node(9);
+DSAnalyzer.importFunc(llAdd);
 // -> exports llAdd functionality into frontend. use a callback to invoke llAdd..
 // visualize method reassigns some variable to the current object..
-  // push that object into an array to form JSX elements (divs)
+// push that object into an array to form JSX elements (divs)
 
-DSAnalyzer.myArgs([linkedList, nodetoAdd]);
-
+DSAnalyzer.importArgs([linkedList, nodetoAdd, notetoAdd, dada]);

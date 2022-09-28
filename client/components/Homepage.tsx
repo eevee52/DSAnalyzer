@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Visualizer from './Visualizer';
-import { outputArr } from '../DSAnalyzer/visualize';
+import { outputArr, reset } from '../DSAnalyzer/visualize';
+import { functionToRun, argsToRun } from '../DSAnalyzer/main';
+// import functionToRun from '../DSAnalyzer/main';
+// import argsToRun from '../DSAnalyzer/main';
+import { Initializer } from './Initializer';
+
 // nav bar
 
 // button to select algorithm to visualize
@@ -10,7 +15,7 @@ import { outputArr } from '../DSAnalyzer/visualize';
 
 // step by step for components
 
-
+// declare const DSAnalyzer: any; 
 const HomePage = () => {
 
   const [data, setData] = useState([]);
@@ -18,18 +23,28 @@ const HomePage = () => {
 
   //onclick (visualize button) to execute code inside dropdown
 
+  const resetData = () => {
+    reset();
+    location.reload();
+    setData([]);
+  };
+
   const createBoxes = () => {
+    // invoke the correct algorithm with arguments
+    functionToRun(...argsToRun);
     setData(outputArr);
   };
 
   return (
     <div id='homepage'>
       <div id='button-container'>
+        <Initializer />
         <select id="algo-selector">
           <option>Testing1</option>
           <option>Testing2</option>
         </select>
-        <button onClick={() => { createBoxes(); }}> Visualize</button>
+        <button onClick={() => { createBoxes() }}> Visualize</button>
+        <button onClick={() => resetData()}>Reset</button>
       </div>
       <div id="visualization">
         <Visualizer data={data} />
