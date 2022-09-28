@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Visualizer from './Visualizer';
-import { output, reset, tester } from '../DSAnalyzer/visualize';
+import { output, reset } from '../DSAnalyzer/visualize';
 import { functionToRun, argsToRun } from '../DSAnalyzer/main';
 // import functionToRun from '../DSAnalyzer/main';
 // import argsToRun from '../DSAnalyzer/main';
@@ -31,8 +31,7 @@ const HomePage = () => {
 
   const createBoxes = () => {
     // invoke the correct algorithm with arguments
-    // functionToRun(...argsToRun);
-    tester();
+    functionToRun(...argsToRun);
 
     setData(output);
   };
