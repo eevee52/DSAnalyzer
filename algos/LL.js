@@ -25,9 +25,9 @@ const llAdd = (LL, node) => {
     LL.head = node;
     LL.tail = node;
   }
-
+  // LL = {1,2,3,4,5}
   while (currNode) {
-    DSAnalyzer.visualize(LL);
+    DSAnalyzer.visualize(LL); // => [1,2,3,4,5] => [1,2,3,4,5,6]
     if (currNode.next) {
       currNode = currNode.next;
     }
@@ -37,6 +37,7 @@ const llAdd = (LL, node) => {
     }
   }
 };
+
 
 const linkedList = new LinkedList();
 linkedList.head = new Node(1);

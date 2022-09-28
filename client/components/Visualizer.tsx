@@ -1,19 +1,18 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
+import Box from './Box';
+import visualize from '../DSAnalyzer/visualize';
+import Row from './Row';
 
-
-const visualizer = () => {
-
-  const [data, setData] = useState([]);
-  // data = [{},{}.{}]
-  const visualize = (importedData: any) => {
-    //do some stuff to importedData
-    useEffect(() => {
-      setData([...importedData]);
-    });
-  };
-
+const visualizer = (props: any) => {
+  const tempBox = [];
+  for (let i = 0; i < props.data.length; i++) {
+    tempBox.push(<Row data={props.data[i]} />);
+  }
   return (
-    console.log('hello')
+    <div className="box-container">
+      {tempBox}
+    </div>
   );
 };
 

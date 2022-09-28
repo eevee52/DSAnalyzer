@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
+import Visualizer from './Visualizer';
+import { outputArr } from '../DSAnalyzer/visualize';
 import { Initializer } from './Initializer';
 
 // nav bar
@@ -11,14 +14,28 @@ import { Initializer } from './Initializer';
 
 
 const HomePage = () => {
-  return (
-    <div id='container'>
-      <Initializer />
-      <div> Button</div>
-      <div> Render me</div>
 
+  const [data, setData] = useState([]);
+  //logic to display file names in dropdown
+
+  //onclick (visualize button) to execute code inside dropdown
+
+  const createBoxes = () => {
+    setData(outputArr);
+  };
+
+  return (
+    <div id='homepage'>
+      <div id='button-container'>
+      <Initializer />
+        <select id="algo-selector">
+          <option>Testing1</option>
+          <option>Testing2</option>
+        </select>
+        <button onClick={() => { createBoxes(); }}> Visualize</button>
+      </div>
       <div id="visualization">
-        <span>HELLO I WORK VERY HARD</span>
+        <Visualizer data={data} />
       </div>
     </div>
 
