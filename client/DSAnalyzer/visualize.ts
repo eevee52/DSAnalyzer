@@ -45,6 +45,11 @@ const output: { outputArr: Array<(string | number)[]>; BST: any } = {
 //   output.outputArr.push(list);
 // };
 
+
+
+
+// BST VISUALIZER TEST
+
 const visualize = (root: any) => {
   output.BST = root;
 };
@@ -62,12 +67,12 @@ class BinarySearchTree {
   }
 }
 
-
 const tree = new BinarySearchTree(10);
 tree.left = new BinarySearchTree(5);
-tree.left.left = new BinarySearchTree(3);
-tree.left.right = new BinarySearchTree(6);
 tree.right = new BinarySearchTree(14);
+tree.right.left = new BinarySearchTree(12);
+tree.left.right = new BinarySearchTree(7);
+tree.left.right.right = new BinarySearchTree(8);
 
 const tester = () => {
   const bstSum = (root: any) => {

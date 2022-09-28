@@ -68,6 +68,23 @@
   margin: 10px 0px;
 }
 
+.BSTRow {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border: 1px solid $primary;
+  border-radius: 50%;
+  margin: 25px 25px;
+}
+
 button {
   background-color: $secondary;
   border: $primary;
