@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Box from './Box';
-import visualize from '../DSAnalyzer/visualize';
 import Row from './Row';
 
 const visualizer = (props: any) => {
