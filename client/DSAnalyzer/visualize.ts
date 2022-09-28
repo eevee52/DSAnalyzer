@@ -1,8 +1,14 @@
 //output array for frontend
-let outputArr: any = [];
+// let outputArr: any = [];
 
 const reset = () => {
-  outputArr = [];
+  // outputArr = [];
+  output.outputArr = [];
+};
+
+const output: { outputArr: Array<(string | number)[]>; BST: any } = {
+  outputArr: [],
+  BST: ''
 };
 
 const visualize = (LL: any) => {
@@ -29,14 +35,16 @@ const visualize = (LL: any) => {
     // so we ensure one null gets pushed into outputArr
     if (!currNode) firstNull = false;
     // set currNode equal to next node
-    
-    currNode = currNode.next;
+
+    else currNode = currNode.next;
     // else if (currNode) currNode = currNode.next;
     // else break;
-    counter +=1;
+    counter += 1;
     if (counter > 200) break;
   }
-  outputArr.push(list);
+  output.outputArr.push(list);
 };
 
-export { outputArr, visualize, reset };
+
+
+export { output, visualize, reset };

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Visualizer from './Visualizer';
-import { outputArr, reset } from '../DSAnalyzer/visualize';
-import { functionsToRun, argsToRun }from '../DSAnalyzer/main';
+import { output, reset } from '../DSAnalyzer/visualize';
+import { functionsToRun, argsToRun } from '../DSAnalyzer/main';
 import { Initializer } from './Initializer';
 
 // nav bar
@@ -16,11 +16,15 @@ import { Initializer } from './Initializer';
 // declare const DSAnalyzer: any; 
 const HomePage = () => {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
+  //logic to display file names in dropdown
+
+  //onclick (visualize button) to execute code inside dropdown
 
   const resetData = () => {
     reset();
-    setData([]);
+    location.reload();
+    setData({});
   };
   
   const functionNames = [];
@@ -72,7 +76,7 @@ const HomePage = () => {
     functionsToRun[funcName](...args);
     // console.log('these are the args', argsToRun);
     // console.log('what am I: ', outputArr);
-    setData(outputArr);
+    setData(output);
   };
 
   return (

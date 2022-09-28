@@ -12,8 +12,9 @@ fileController.getFiles = (
   fs.readdir(algos, (err, files) => {
     if (err) console.log(err);
     else {
-      files.forEach( file => {
+      files.forEach(file => {
         const data = fs.readFileSync(path.resolve(__dirname, algos, file), 'utf8');
+        const filename = file.replace
         result = result.concat(data + '\n');
       });
       res.locals.files = result;
