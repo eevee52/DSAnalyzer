@@ -1,55 +1,55 @@
-// some code here for LL
+// // some code here for LL
 
-const LL = () => {
-  console.log('i am working hard');
+// const LL = () => {
+//   console.log('i am working hard');
 
-  let counter = 0;
-  counter += 1;
-  return counter;
-};
+//   let counter = 0;
+//   counter += 1;
+//   return counter;
+// };
 
-export default { LL };
+// export default { LL };
 
-/*
-const visualize = require('something')
+// /*
+// const visualize = require('something')
 
-function llAdd(LL: LL, node) {
+// function llAdd(LL: LL, node) {
 
-  ...code
+//   ...code
 
-  visualize.visualize(LL)
+//   visualize.visualize(LL)
 
-  ...for loop
+//   ...for loop
   
-  visualize.visualize(LL)
-}
+//   visualize.visualize(LL)
+// }
 
-*/
+// */
 
-import visualizer from DSAnalyzer
+// import visualizer from DSAnalyzer
 
-const myMethod = (LL, node) => { 
-  visualizer.visualize(LL)
-  // my algo here
-}
+// const myMethod = (LL, node) => { 
+//   visualizer.visualize(LL)
+//   // my algo here
+// }
 
-visualizer.functionToRun(myMethod)
+// visualizer.functionToRun(myMethod)
 
-const myLL = { //this is a linked list }
-  const myNode = {// this is a node}
-  visualizer.myinputs([ myLL, myNode  ]}
+// const myLL = { //this is a linked list }
+//   const myNode = {// this is a node}
+//   visualizer.myinputs([ myLL, myNode  ]}
 
 
-// this.val = 3
-// generates a JSX element (box div, add val inside as innerhtmltext)
+// // this.val = 3
+// // generates a JSX element (box div, add val inside as innerhtmltext)
 
-{
-  this.val: 3
-  this.next: {
-    this.val: 4
-    this.next: {
-      this.val: 5
-      this.next: null
-    }
-  }
- }
+// {
+//   this.val: 3
+//   this.next: {
+//     this.val: 4
+//     this.next: {
+//       this.val: 5
+//       this.next: null
+//     }
+//   }
+//  }

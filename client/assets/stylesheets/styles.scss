@@ -1,0 +1,96 @@
+@import "./colors.scss";
+
+#app,
+#outer-container {
+  width: 100%;
+}
+
+* {
+  background-color: $third;
+}
+
+#outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#visualization {
+  margin: 25px 0px;
+  border: 2px solid rgba(48, 49, 54, 0.441);
+  width: 100%;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  background-color: transparent;
+  padding: 0 0 0 45px;
+}
+
+.arrow {
+  background-color: transparent;
+  padding: 0 0 0 50px;
+}
+
+.LLbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  background-color: $secondary;
+  margin: 0 25px;
+}
+
+#button-container {
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  border: $primary;
+  margin: 10px 0px;
+}
+
+button {
+  background-color: $secondary;
+  border: $primary;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+select {
+  background-color: $secondary;
+  border: $primary;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 60%;
+}
