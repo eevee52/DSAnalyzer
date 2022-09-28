@@ -2,6 +2,9 @@ type UserFunctions = {
   [name: string]: any,
 }
 
+type UserArgs= {
+  [name: string]: any,
+}
 // export const testing = {
 //   functionToRun,
 //   importFunc: (func: any) => {
@@ -16,7 +19,7 @@ type UserFunctions = {
 // };
 
 const functionsToRun: UserFunctions = { }
-const argsToRun: UserArgs = { }
+const argsToRun: UserArgs = {};
 
 export const importFunc = (func: any) => {
   functionsToRun[func.name] = func;

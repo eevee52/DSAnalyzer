@@ -26,3 +26,6 @@ const bstSum = (root) => {
   }
 
 };
+
+DSAnalyzer.importArgs({tree});
+DSAnalyzer.importFunc(bstSum);
