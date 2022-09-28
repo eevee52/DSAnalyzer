@@ -17,7 +17,6 @@ import { Initializer } from './Initializer';
 const HomePage = () => {
 
   const [data, setData] = useState([]);
-  const [inputs, setInputs] = useState([]);
 
   const resetData = () => {
     reset();
@@ -26,9 +25,7 @@ const HomePage = () => {
   
   const functionNames = [];
   for (const key in functionsToRun){
-    functionNames.push(<option>{key}</option>)
-    // console.log(functionsToRun)
-    // console.log(Object.getPrototypeOf(functionsToRun.llAdd).name)
+    functionNames.push(<option value={key}>{key}()</option>)
   }
 
   const argNames = [];
@@ -37,9 +34,9 @@ const HomePage = () => {
     argNames.push(<option value={key}>{key}</option>)
   }
 
+  // change this const if we get around to making # args dynamic based on fn
   const numParams = 3;
   const argSelectorIds: Array<any> = [];
-
   for (let i = 1; i <= numParams; i++){
     argSelectorIds.push("arg-selector-" + i)
   }
@@ -54,6 +51,11 @@ const HomePage = () => {
     )
   }
 
+  const updateArgs = (e: any) => {
+    e.preventDefault();
+    const selected = e.target.value
+    console.log(selected)
+  }
 
 
   const createBoxes = (e: any) => {
@@ -64,11 +66,9 @@ const HomePage = () => {
     argSelectorIds.forEach((e,i) => {
       const selectorId = 'arg-selector-' + (i+1)
       if (targetForm[selectorId].value !== "") {
-        // console.log(targetForm[selectorId].value = "")
         args.push(argsToRun[targetForm[selectorId].value])
       }
     })
-    console.log('the args',args)
     functionsToRun[funcName](...args);
     // console.log('these are the args', argsToRun);
     // console.log('what am I: ', outputArr);
@@ -80,7 +80,7 @@ const HomePage = () => {
       <div id='button-container'>
         <Initializer />
         <form id="algo-selector">
-          <select id="algo-selector" required>
+          <select id="algo-selector" required onChange={(e) => { updateArgs(e) }}>
 <option value="" selected disabled hidden>choose function</option>
             {functionNames}
           </select>
