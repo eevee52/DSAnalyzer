@@ -67,8 +67,6 @@ const HomePage = () => {
     const targetForm = e.target.form
     const funcName = e.target.form['algo-selector'].value
     const args: Array<any> = [];
-    console.log('func',functionsToRun[funcName]);
-    console.log('args',args)
 
     argSelectorIds.forEach((e,i) => {
       const selectorId = 'arg-selector-' + (i+1)
